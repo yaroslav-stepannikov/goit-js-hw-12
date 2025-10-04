@@ -50,20 +50,27 @@ form.addEventListener('submit', async event => {
 
     createGallery(data.hits);
 
-    if (data.totalHits > page * PER_PAGE) {
-      showLoadMoreButton();
-    } else {
+    const totalPages = Math.ceil(data.totalHits / PER_PAGE);
+    if (page >= totalPages) {
       hideLoadMoreButton();
+      iziToast.info({
+        title: 'End',
+        message: `You've reached the last page of results.`,
+        timeout: 3000,
+        position: 'topRight',
+      });
+    } else {
+      showLoadMoreButton();
     }
 
     iziToast.success({
       title: 'Success',
-      message: `Found ${data.totalHits} images`,
+      message: `Found ${data.totalHits} images.`,
       timeout: 3000,
       position: 'topRight',
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     iziToast.error({
       title: 'Error',
       message: 'Something went wrong while fetching images.',
@@ -96,7 +103,6 @@ if (loadBtn) {
       createGallery(data.hits);
 
       const totalPages = Math.ceil(data.totalHits / PER_PAGE);
-
       if (page >= totalPages) {
         hideLoadMoreButton();
         iziToast.info({
