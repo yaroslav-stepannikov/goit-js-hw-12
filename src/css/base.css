@@ -36,6 +36,19 @@ main:has(.back-link) {
   text-align: center;
 }
 
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  background-color: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .form {
   display: flex;
   justify-content: center;
@@ -64,17 +77,7 @@ main:has(.back-link) {
 }
 
 .submit-btn {
-  border-radius: 8px;
-  padding: 8px 16px;
   width: 91px;
-  height: 40px;
-  background-color: #4e75ff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #fff;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .submit-btn:hover {
@@ -186,4 +189,15 @@ main:has(.back-link) {
   100% {
     transform: rotateY(-180deg);
   }
+}
+
+.load-btn {
+  width: 125px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+.load-btn-hidden {
+  display: none;
 }
