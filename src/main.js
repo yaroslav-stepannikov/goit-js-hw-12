@@ -92,7 +92,7 @@ loadBtn.addEventListener('click', async () => {
 
     createGallery(data.hits);
 
-    const galleryItem = document.querySelector('.gallery-item'); // після створення галереї
+    const galleryItem = document.querySelector('.gallery-item');
     if (galleryItem) {
       const { height: cardHeight } = galleryItem.getBoundingClientRect();
       window.scrollBy({
